@@ -33,6 +33,19 @@ android {
     }
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId = 'com.dailycoding'
+                artifactId = 'animationx'
+                version = "1.0.0"
+
+            }
+        }
+    }
+}
+
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
