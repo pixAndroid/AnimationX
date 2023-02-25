@@ -1,4 +1,4 @@
-package com.dailycoding.animationx;
+package com.pixandroid.animationx;
 
 import androidx.appcompat.app.AppCompatActivity;
 
