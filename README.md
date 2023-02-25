@@ -1,4 +1,9 @@
 # AnimationX
+
+[![](https://jitpack.io/v/subhojitdp/AnimationX.svg)](https://jitpack.io/#subhojitdp/AnimationX)
+
+
+
 Step 1. Add the JitPack repository to your build file
 
     ```
