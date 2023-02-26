@@ -14,7 +14,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        AnimationX.pulseAnimation(this, new Button(this));
+
+
+
 
 
     }

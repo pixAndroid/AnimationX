@@ -1,10 +1,12 @@
 plugins {
     id 'com.android.library'
+
+    //TODO STEP 01
     id 'maven-publish'
 }
 
 android {
-    namespace 'com.dailycoding.animationx'
+    namespace 'com.pixandroid.animationx'
     compileSdk 32
 
     defaultConfig {
@@ -15,6 +17,19 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+
+        //TODO STEP 02
+       /* aarMetadata {
+            minCompileSdk = 29
+        }*/
+
+        //TODO STEP 03
+        publishing {
+            singleVariant('release') {
+                withSourcesJar()
+            }
+        }
 
     }
 
@@ -32,22 +47,33 @@ android {
 }
 
 
-//Publish Library
-afterEvaluate {
+//Publish Library Locally
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.pixandroid.animationx'
+            artifactId = 'animationx'
+            version = '1.1'
+
+            afterEvaluate {
+                from components.release
+            }
+        }
+    }
+}
+
+/*afterEvaluate {
     publishing {
         publications {
-            // Creates a Maven publication called "release".
             release(MavenPublication) {
-                // Applies the component for the release build variant.
                 from components.release
-                // You can then customize attributes of the publication as shown below.
                 groupId = 'com.pixandroid'
                 artifactId = 'animationx'
                 version = '1.0.1'
             }
         }
     }
-}
+}*/
 
 dependencies {
 
