@@ -24,6 +24,10 @@ android {
             minCompileSdk = 29
         }
 
+        testFixtures {
+            enable = true
+        }
+
         //TODO STEP 03
         publishing {
             singleVariant('release') {
