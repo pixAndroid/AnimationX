@@ -20,9 +20,9 @@ android {
 
 
         //TODO STEP 02
-       /* aarMetadata {
+        aarMetadata {
             minCompileSdk = 29
-        }*/
+        }
 
         //TODO STEP 03
         publishing {
