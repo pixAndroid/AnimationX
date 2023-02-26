@@ -1,4 +1,4 @@
-package com.pixandroid.animationx;
+package com.pixandroid.sample;
 
 import org.junit.Test;
 
