@@ -20,11 +20,9 @@ Mainly focused on regular animations, such as - Aplha, Translate, Scale, etc.
 #### Step 2. Add the dependency
 
 ```http
-    allprojects {
-        repositories {
-            maven { url 'https://jitpack.io' }
-        }
-    }
+    dependencies {
+	      implementation 'com.github.pixAndroid:AnimationX:1.7'
+	}
 ```
 
 
