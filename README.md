@@ -3,13 +3,13 @@
 
 
    <h3 align="center">Step 1. Add the JitPack repository to your build file</h3>
-   ```
-   allprojects {
+    ```
+    allprojects {
         repositories {
             maven { url 'https://jitpack.io' }
         }
     }
-   ```
+    ```
 
    <h3 align="center">Step 2. Add the dependency</h3>
    ```
