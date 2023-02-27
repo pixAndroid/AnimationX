@@ -21,7 +21,7 @@ Mainly focused on regular animations, such as - Aplha, Translate, Scale, etc.
 
 ```bash
 	dependencies {
-	        implementation 'com.github.pixAndroid:AnimationX:Tag'
+	        implementation 'com.github.pixAndroid:AnimationX:1.7'
 	}
 ```
 
