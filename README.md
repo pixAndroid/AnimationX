@@ -1,7 +1,9 @@
 
 # AndroidX v1.7
+[![](https://jitpack.io/v/pixAndroid/AnimationX.svg)](https://jitpack.io/#pixAndroid/AnimationX)
 
-Mainly foucused on regular animations.
+
+Mainly focused on regular animations, such as - Aplha, Translate, Scale, etc.
 
 
 ## Implementation
