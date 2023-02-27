@@ -1,6 +1,7 @@
 # AnimationX
 
-[![](https://jitpack.io/v/subhojitdp/AnimationX.svg)](https://jitpack.io/#subhojitdp/AnimationX)
+[![](https://jitpack.io/v/pixAndroid/AnimationX.svg)](https://jitpack.io/#pixAndroid/AnimationX)
+
 
 
 
@@ -17,8 +18,8 @@ Step 1. Add the JitPack repository to your build file
   
   Step 2. Add the dependency
   ```
-  dependencies {
-	        implementation 'com.github.subhojitdp:AnimationX:1.0.0'
+dependencies {
+	        implementation 'com.github.pixAndroid:AnimationX:1.4'
 	}
   ```
   
