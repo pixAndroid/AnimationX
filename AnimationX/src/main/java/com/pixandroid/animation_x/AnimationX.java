@@ -7,6 +7,8 @@ import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LayoutAnimationController;
 
@@ -18,10 +20,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class AnimationX {
 
-    public static void changeColor(Context context, View view, int colorFrom, int colorTo) {
+    public static void click_effect_shake_left(Context context, View view) {
+        view.startAnimation(AnimationUtils.loadAnimation(context, R.anim.shake_left));
+    }
+
+    public static void click_effect_scale_up(Context context, View view) {
+        view.startAnimation(AnimationUtils.loadAnimation(context, R.anim.click_scale));
+    }
+
+    public static void color_change_effect(Context context, View view, int colorFrom, int colorTo, int duration) {
 
         ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, colorTo);
-        colorAnimation.setDuration(500); // milliseconds
+        colorAnimation.setDuration(duration); // milliseconds
         colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
 
             @Override
@@ -33,7 +43,7 @@ public class AnimationX {
         colorAnimation.start();
     }
 
-    public static void pulseAnimation(Context context, View view) {
+    public static void pulse_effect(Context context, View view) {
         ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
                 view,
                 PropertyValuesHolder.ofFloat("scaleX", 1.2f),
@@ -47,7 +57,8 @@ public class AnimationX {
     }
 
 
-    public static void recyclerView_scale_animation(final RecyclerView recyclerView) {
+
+    public static void recyclerview_scale_up_item(final RecyclerView recyclerView) {
         final Context context = recyclerView.getContext();
         final LayoutAnimationController controller =
                 AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_scale);
@@ -57,5 +68,28 @@ public class AnimationX {
         recyclerView.scheduleLayoutAnimation();
     }
 
+
+    public static void down(Context context, View view, int visible) {
+        Animation bottomUp = AnimationUtils.loadAnimation(context,
+                R.anim.down);
+        view.startAnimation(bottomUp);
+        view.setVisibility(visible);
+    }
+
+    public static void up(Context context, View view, int visible) {
+        Animation bottomUp = AnimationUtils.loadAnimation(context,
+                R.anim.up);
+        view.startAnimation(bottomUp);
+        view.setVisibility(visible);
+    }
+
+
+    public static void fade_out(View view, int duration) {
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
+        alphaAnimation.setDuration(duration);
+        alphaAnimation.setRepeatCount(1);
+        alphaAnimation.setRepeatMode(Animation.REVERSE);
+        view.startAnimation(alphaAnimation);
+    }
 
 }
