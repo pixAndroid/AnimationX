@@ -7,6 +7,10 @@ import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.view.View;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /********************************************
  *     Created by DailyCoding on 24-Feb-23.  *
@@ -40,6 +44,17 @@ public class AnimationX {
         scaleDown.setRepeatMode(ObjectAnimator.REVERSE);
 
         scaleDown.start();
+    }
+
+
+    public static void recyclerView_scale_animation(final RecyclerView recyclerView) {
+        final Context context = recyclerView.getContext();
+        final LayoutAnimationController controller =
+                AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_scale);
+
+        recyclerView.setLayoutAnimation(controller);
+        recyclerView.getAdapter().notifyDataSetChanged();
+        recyclerView.scheduleLayoutAnimation();
     }
 
 
