@@ -56,7 +56,7 @@ publishing {
     publications {
         release(MavenPublication) {
             groupId = 'com.pixandroid.animation_x'
-            artifactId = 'animation_x'
+            artifactId = 'animationx'
             version = '1.5'
 
             afterEvaluate {
