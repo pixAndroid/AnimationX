@@ -20,8 +20,8 @@ Mainly focused on regular animations, such as - Aplha, Translate, Scale, etc.
 #### Step 2. Add the dependency
 
 ```http
-    dependencies {
-	      implementation 'com.github.pixAndroid:AnimationX:1.7'
+	dependencies {
+	        implementation 'com.github.pixAndroid:AnimationX:Tag'
 	}
 ```
 
