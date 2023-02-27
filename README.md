@@ -13,7 +13,7 @@ allprojects {
 
 <h3 align="center">Step 2. Add the dependency</h3>
 ```
-implementation 'com.github.pixAndroid:AnimationX:1.5'
+implementation 'com.github.pixAndroid:AnimationX:1.7'
 	
 ```
 
