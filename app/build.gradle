@@ -7,7 +7,7 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "com.pixandroid.sample"
+        applicationId "com.pixandroid.animation_x"
         minSdk 24
         targetSdk 33
         versionCode 1

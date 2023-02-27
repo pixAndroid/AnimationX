@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.pixandroid.sample">
+    package="com.pixandroid.animation_x">
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,7 @@
         android:theme="@style/Theme.AnimationX"
         tools:targetApi="31">
         <activity
-            android:name="com.pixandroid.sample.MainActivity"
+            android:name="com.pixandroid.animation_x.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

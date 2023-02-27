@@ -1,4 +1,4 @@
-package com.pixandroid.sample;
+package com.pixandroid.animation_x;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.animationx", appContext.getPackageName());
+        assertEquals("com.dailycoding.animationx.test", appContext.getPackageName());
     }
 }

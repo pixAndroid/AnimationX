@@ -1,4 +1,4 @@
-package com.pixandroid.sample;
+package com.pixandroid.animation_x;
 
 
 import android.animation.ArgbEvaluator;
