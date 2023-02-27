@@ -19,9 +19,8 @@ Step 1. Add the JitPack repository to your build file
   
   Step 2. Add the dependency
   ```
-    dependencies {
-	     implementation 'com.github.pixAndroid:AnimationX:1.5'
-	}
+   implementation 'com.github.pixAndroid:AnimationX:1.5'
+	
   ```
   
   
