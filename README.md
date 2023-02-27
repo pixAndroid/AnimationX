@@ -10,7 +10,7 @@ Mainly focused on regular animations, such as - Aplha, Translate, Scale, etc.
 
 #### Step 1. Add the JitPack repository to your build.gradle file
 
-```http
+```bash
     allprojects {
         repositories {
             maven { url 'https://jitpack.io' }
@@ -19,7 +19,7 @@ Mainly focused on regular animations, such as - Aplha, Translate, Scale, etc.
 ```
 #### Step 2. Add the dependency
 
-```http
+```bash
 	dependencies {
 	        implementation 'com.github.pixAndroid:AnimationX:Tag'
 	}
