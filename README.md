@@ -1,5 +1,5 @@
 
-# AndroidX v1.7
+# AnimationX 
 [![](https://jitpack.io/v/pixAndroid/AnimationX.svg)](https://jitpack.io/#pixAndroid/AnimationX)
 
 
@@ -21,7 +21,7 @@ Mainly focused on regular animations, such as - Aplha, Translate, Scale, etc.
 
 ```bash
 	dependencies {
-	        implementation 'com.github.pixAndroid:AnimationX:1.7'
+	        implementation 'com.github.pixAndroid:AnimationX:1.8'
 	}
 ```
 
