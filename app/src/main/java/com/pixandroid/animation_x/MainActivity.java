@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
+
+    ProgressBar progress_bar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         RadioGroup radio_group = findViewById(R.id.radio_group);
         Button btn_reset = findViewById(R.id.btn_reset);
         Button btn_apply = findViewById(R.id.btn_apply);
+        progress_bar = findViewById(R.id.progress_bar);
 
 
         btn_apply.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +51,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        int yourMaxValue = 20000;
+        progress_bar.setMax(yourMaxValue * 100);
 
+        CountDownTimer countDownTimer = new CountDownTimer(yourMaxValue, 5000) {
+            @Override
+            public void onTick(long l) {
+                int progress = (int) (yourMaxValue - l);
+                AnimationX.smoothProgressAnimation(progress_bar, progress, 7000);
+            }
+
+            @Override
+            public void onFinish() {
+                AnimationX.smoothProgressAnimation(progress_bar, yourMaxValue, 7000);
+            }
+        }.start();
 
 
 

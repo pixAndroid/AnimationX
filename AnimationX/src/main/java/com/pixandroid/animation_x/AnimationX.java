@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LayoutAnimationController;
+import android.widget.ProgressBar;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -97,6 +99,17 @@ public class AnimationX {
         alphaAnimation.setRepeatCount(1);
         alphaAnimation.setRepeatMode(Animation.REVERSE);
         view.startAnimation(alphaAnimation);
+    }
+
+    public static void smoothProgressAnimation(ProgressBar pb, int progressTo, long anim_duration)
+    {
+        //TODO : HOW TO SET MAX VALUE IN YOUR PROGRESS BAR?
+        //TODO : pb.setMax(yourMaxValue * 100);
+        ObjectAnimator animation = ObjectAnimator.ofInt(pb, "progress", pb.getProgress(), progressTo * 100);
+        animation.setDuration(anim_duration);
+        animation.setAutoCancel( true);
+        animation.setInterpolator( new DecelerateInterpolator());
+        animation.start();
     }
 
 }

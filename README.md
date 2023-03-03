@@ -25,7 +25,15 @@ Mainly focused on regular animations, such as - Aplha, Translate, Scale, etc.
 	}
 ```
 
-
+## Smooth ProgressBar Animation
+```bash
+    //SET MAX PROGRESS 
+	int yourMaxValue = 20000;
+    progress_bar.setMax(yourMaxValue * 100);
+    
+    //DO ANIMATION
+    AnimationX.smoothProgressAnimation(progress_bar, progress, 7000);
+```
 
 ## Badges
 
