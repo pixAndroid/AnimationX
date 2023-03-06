@@ -36,7 +36,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
     progress_bar.setMax(yourMaxValue * 100);
     
     //DO ANIMATION
-    AnimationX.smoothProgressAnimation(progress_bar, progress, 7000);
+    AnimationX.smoothProgressAnimation(progress_bar, progress, duration);
 ```
 
 ## Badges
