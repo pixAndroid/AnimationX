@@ -29,7 +29,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
 	implementation 'com.github.pixAndroid:AnimationX:2.0'
 ```
 
-## Smooth ProgressBar Animation
+## 01 - Smooth ProgressBar Animation
 ```bash
     //SET MAX PROGRESS 
 	int yourMaxValue = 20000;
