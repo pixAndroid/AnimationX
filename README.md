@@ -32,7 +32,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
 ## 01 - Smooth ProgressBar Animation
 ```bash
     //SET MAX PROGRESS 
-	int yourMaxValue = 20000;
+    int yourMaxValue = 20000;
     progress_bar.setMax(yourMaxValue * 100);
     
     //DO ANIMATION
