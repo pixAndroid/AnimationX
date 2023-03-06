@@ -51,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        int yourMaxValue = 20000;
+        int yourMaxValue = 120000;
         progress_bar.setMax(yourMaxValue * 100);
+
 
         CountDownTimer countDownTimer = new CountDownTimer(yourMaxValue, 5000) {
             @Override

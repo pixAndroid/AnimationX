@@ -12,6 +12,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LayoutAnimationController;
+import android.view.animation.TranslateAnimation;
 import android.widget.ProgressBar;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -92,7 +93,6 @@ public class AnimationX {
         view.setVisibility(visible);
     }
 
-
     public static void fade_out(View view, int duration) {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
         alphaAnimation.setDuration(duration);
@@ -101,8 +101,7 @@ public class AnimationX {
         view.startAnimation(alphaAnimation);
     }
 
-    public static void smoothProgressAnimation(ProgressBar pb, int progressTo, long anim_duration)
-    {
+    public static void smoothProgressAnimation(ProgressBar pb, int progressTo, long anim_duration) {
         //TODO : HOW TO SET MAX VALUE IN YOUR PROGRESS BAR?
         //TODO : pb.setMax(yourMaxValue * 100);
         ObjectAnimator animation = ObjectAnimator.ofInt(pb, "progress", pb.getProgress(), progressTo * 100);
@@ -110,6 +109,22 @@ public class AnimationX {
         animation.setAutoCancel( true);
         animation.setInterpolator( new DecelerateInterpolator());
         animation.start();
+    }
+
+    public static void bottomToTop(View view, int duration, int fromY, int toY) {
+        TranslateAnimation animate = new TranslateAnimation(0,0,fromY,toY);
+        animate.setDuration(duration);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        view.setVisibility(View.VISIBLE);
+    }
+
+    public static void translate(View view, int duration, int fromX, int toX, int fromY, int toY) {
+        TranslateAnimation animate = new TranslateAnimation(fromX,toX,fromY,toY);
+        animate.setDuration(duration);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        view.setVisibility(View.VISIBLE);
     }
 
 }
