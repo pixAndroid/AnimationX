@@ -6,6 +6,12 @@
 Mainly focused on regular animations, such as - Aplha, Translate, Scale, etc.
 
 
+
+### Project Requirements
+distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
+
+
+
 ## Implementation
 
 #### Step 1. Add the JitPack repository to your build.gradle file
