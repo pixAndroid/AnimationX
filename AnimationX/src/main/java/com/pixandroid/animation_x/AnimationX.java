@@ -14,6 +14,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LayoutAnimationController;
 import android.view.animation.TranslateAnimation;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -125,6 +126,19 @@ public class AnimationX {
         animate.setFillAfter(true);
         view.startAnimation(animate);
         view.setVisibility(View.VISIBLE);
+    }
+
+    public void digitCounter(int start_number, int end_number, final TextView textview) {
+        ValueAnimator valueAnimator = ValueAnimator.ofInt(start_number, end_number);
+        valueAnimator.setDuration(1500);
+        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                textview.setText(valueAnimator.getAnimatedValue().toString());
+            }
+        });
+        valueAnimator.start();
+
     }
 
 }
