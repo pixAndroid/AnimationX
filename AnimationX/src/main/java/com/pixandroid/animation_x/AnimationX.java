@@ -128,7 +128,7 @@ public class AnimationX {
         view.setVisibility(View.VISIBLE);
     }
 
-    public void digitCounter(int start_number, int end_number, final TextView textview) {
+    public static void digitCounter(int start_number, int end_number, final TextView textview) {
         ValueAnimator valueAnimator = ValueAnimator.ofInt(start_number, end_number);
         valueAnimator.setDuration(1500);
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {

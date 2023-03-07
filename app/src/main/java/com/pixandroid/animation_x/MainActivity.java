@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
         Button btn_reset = findViewById(R.id.btn_reset);
         Button btn_apply = findViewById(R.id.btn_apply);
         progress_bar = findViewById(R.id.progress_bar);
+        TextView txt_number = findViewById(R.id.txt_number);
 
+
+        AnimationX.dig
 
         btn_apply.setOnClickListener(new View.OnClickListener() {
             @Override
