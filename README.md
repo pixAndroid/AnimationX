@@ -26,7 +26,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
 #### Step 2. Add the dependency
 
 ```bash
-	implementation 'com.github.pixAndroid:AnimationX:2.2'
+	implementation 'com.github.pixAndroid:AnimationX:2.3'
 ```
 
 ## 01 - Smooth ProgressBar Animation
