@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                         AnimationX.text_color_change_effect(MainActivity.this, txt_number, 0, Color.RED, 500);
                     }
                 }, 1500);
-                AnimationX.spin_and_move(img);
+                AnimationX.spin_and_move_vertical(img);
 
                 switch (radio_group.getCheckedRadioButtonId()) {
                     case R.id.rb_click_effect_shake_left:

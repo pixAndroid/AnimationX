@@ -202,7 +202,7 @@ public class AnimationX {
 
     }
 
-    public static void spin_and_move(View view) {
+    public static void spin_and_move_vertical(View view) {
         AnimationSet animationSet = new AnimationSet(true);
 
         TranslateAnimation a = new TranslateAnimation(
@@ -220,7 +220,7 @@ public class AnimationX {
         view.startAnimation(animationSet);
     }
 
-    public static void spin_and_move(Context context, View view, int visible) {
+    public static void spin_and_move_vertical(Context context, View view, int visible) {
         Animation bottomUp = AnimationUtils.loadAnimation(context,
                 R.anim.translate_rotate_anim);
         view.startAnimation(bottomUp);
