@@ -29,7 +29,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
 	implementation 'com.github.pixAndroid:AnimationX:2.3'
 ```
 
-## 01 - Smooth ProgressBar Animation
+### 01 - Smooth ProgressBar Animation
 ```bash
     //SET MAX PROGRESS 
     int yourMaxValue = 20000;
@@ -37,6 +37,26 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
     
     //DO ANIMATION
     AnimationX.smoothProgressAnimation(progress_bar, progress, duration);
+```
+
+### 02 - Digit Animation
+```bash
+     AnimationX.digitCounter(0, 100, text_number);
+```
+
+### 02 - Digit Animation
+```bash
+     AnimationX.digitCounter(0, 100, txt_number);
+```
+
+### 03 - Color Chnage Animation
+```bash
+     AnimationX.text_color_change_effect(MainActivity.this, text_view, 0, Color.RED, 500);
+```
+
+### 03 - Spin & Move Animation
+```bash
+     AnimationX.spin_and_move(view);
 ```
 
 ## Badges
