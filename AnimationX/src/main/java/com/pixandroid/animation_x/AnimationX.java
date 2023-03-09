@@ -9,9 +9,11 @@ import android.content.Context;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LayoutAnimationController;
+import android.view.animation.RotateAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -41,6 +43,25 @@ public class AnimationX {
             @Override
             public void onAnimationUpdate(ValueAnimator animator) {
                 view.setBackgroundColor((int) animator.getAnimatedValue());
+            }
+
+        });
+        colorAnimation.start();
+    }
+
+    public static void text_color_change_effect(Context context, TextView textView, int colorFrom, int colorTo, int duration) {
+
+        if (colorFrom <= 0) {
+            colorFrom = textView.getCurrentTextColor();
+        }
+
+        ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, colorTo);
+        colorAnimation.setDuration(duration); // milliseconds
+        colorAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+
+            @Override
+            public void onAnimationUpdate(ValueAnimator animator) {
+                textView.setTextColor((int) animator.getAnimatedValue());
             }
 
         });
@@ -95,11 +116,51 @@ public class AnimationX {
     }
 
     public static void fade_out(View view, int duration) {
+        AlphaAnimation alphaAnimation = new AlphaAnimation(1f, 0.0f);
+        alphaAnimation.setDuration(duration);
+        alphaAnimation.setRepeatCount(0);
+        alphaAnimation.setRepeatMode(Animation.RESTART);
+        view.startAnimation(alphaAnimation);
+        alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                view.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+    }
+
+    public static void fade_in(View view, int duration) {
         AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
         alphaAnimation.setDuration(duration);
-        alphaAnimation.setRepeatCount(1);
-        alphaAnimation.setRepeatMode(Animation.REVERSE);
+        alphaAnimation.setRepeatCount(0);
+        alphaAnimation.setRepeatMode(Animation.RESTART);
         view.startAnimation(alphaAnimation);
+        alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                view.setVisibility(View.VISIBLE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
     }
 
     public static void smoothProgressAnimation(ProgressBar pb, int progressTo, long anim_duration) {
@@ -139,6 +200,31 @@ public class AnimationX {
         });
         valueAnimator.start();
 
+    }
+
+    public static void spin_and_move(View view) {
+        AnimationSet animationSet = new AnimationSet(true);
+
+        TranslateAnimation a = new TranslateAnimation(
+               0, 0,
+               2000,0);
+        a.setDuration(1000);
+
+        RotateAnimation r = new RotateAnimation(360f, 0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+//        r.setStartOffset(1000);
+        r.setDuration(1400);
+
+        animationSet.addAnimation(r);
+        animationSet.addAnimation(a);
+
+        view.startAnimation(animationSet);
+    }
+
+    public static void spin_and_move(Context context, View view, int visible) {
+        Animation bottomUp = AnimationUtils.loadAnimation(context,
+                R.anim.translate_rotate_anim);
+        view.startAnimation(bottomUp);
+        view.setVisibility(visible);
     }
 
 }

@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -14,6 +16,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     ProgressBar progress_bar;
+    ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,17 +25,27 @@ public class MainActivity extends AppCompatActivity {
 
 
         RadioGroup radio_group = findViewById(R.id.radio_group);
-        Button btn_reset = findViewById(R.id.btn_reset);
+
         Button btn_apply = findViewById(R.id.btn_apply);
         progress_bar = findViewById(R.id.progress_bar);
+        img = findViewById(R.id.img);
         TextView txt_number = findViewById(R.id.txt_number);
 
 
-        AnimationX.dig
+
 
         btn_apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                AnimationX.digitCounter(0, 486, txt_number);
+                txt_number.setTextColor(Color.BLACK);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        AnimationX.text_color_change_effect(MainActivity.this, txt_number, 0, Color.RED, 500);
+                    }
+                }, 1500);
+                AnimationX.spin_and_move(img);
 
                 switch (radio_group.getCheckedRadioButtonId()) {
                     case R.id.rb_click_effect_shake_left:
@@ -45,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         AnimationX.color_change_effect(MainActivity.this, view, Color.RED, Color.GREEN, 1000);
                         break;
                     case R.id.rb_fade_out:
-                        AnimationX.fade_out(view, 2000);
+                        AnimationX.fade_in(view, 2000);
                         break;
 
 

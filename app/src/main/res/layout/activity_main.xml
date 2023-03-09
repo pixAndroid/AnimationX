@@ -40,24 +40,20 @@
 
     </RadioGroup>
     <LinearLayout
+        android:id="@+id/m2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_centerInParent="true">
 
-        <Button
-            android:id="@+id/btn_reset"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="RESET"/>
 
         <Button
             android:id="@+id/btn_apply"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="APPLY"/>
+            android:text="APPLY"
+            android:layout_margin="32dp"/>
 
     </LinearLayout>
 
@@ -66,7 +62,13 @@
         android:layout_above="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"/>
+        android:text="0"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:letterSpacing="0.1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -74,5 +76,14 @@
         android:layout_height="wrap_content"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_alignParentBottom="true"/>
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_ac"
+        android:layout_centerInParent="true"
+        app:tint="@color/black"
+        android:layout_below="@+id/radio_group"/>
 
 </RelativeLayout>
