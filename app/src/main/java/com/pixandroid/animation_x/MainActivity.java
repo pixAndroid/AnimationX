@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
                 switch (radio_group.getCheckedRadioButtonId()) {
                     case R.id.rb_click_effect_shake_left:
-                        AnimationX.click_effect_shake_left(MainActivity.this, view);
+                        AnimationX.click_effect_shake_right(MainActivity.this, view);
                         break;
                     case R.id.rb_click_effect_scale_up:
                         AnimationX.click_effect_scale_up(MainActivity.this, view);

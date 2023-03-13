@@ -30,6 +30,10 @@ public class AnimationX {
         view.startAnimation(AnimationUtils.loadAnimation(context, R.anim.shake_left));
     }
 
+    public static void click_effect_shake_right(Context context, View view) {
+        view.startAnimation(AnimationUtils.loadAnimation(context, R.anim.shake_right));
+    }
+
     public static void click_effect_scale_up(Context context, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(context, R.anim.click_scale));
     }
