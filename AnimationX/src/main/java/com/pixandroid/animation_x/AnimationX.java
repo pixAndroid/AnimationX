@@ -119,6 +119,36 @@ public class AnimationX {
         view.setVisibility(visible);
     }
 
+
+    public static void alphaAnimation(View view, float from_alpha, float to_alpha,  int duration, AlphaListener listener) {
+        AlphaAnimation alphaAnimation = new AlphaAnimation(from_alpha, to_alpha);
+        alphaAnimation.setDuration(duration);
+        alphaAnimation.setRepeatCount(0);
+        alphaAnimation.setRepeatMode(Animation.RESTART);
+        view.startAnimation(alphaAnimation);
+        alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                listener.onAnimationCompleted();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+    }
+
+    public interface AlphaListener {
+        void onAnimationCompleted();
+    }
+
+
     public static void fade_out(View view, int duration) {
         AlphaAnimation alphaAnimation = new AlphaAnimation(1f, 0.0f);
         alphaAnimation.setDuration(duration);
@@ -224,11 +254,15 @@ public class AnimationX {
         view.startAnimation(animationSet);
     }
 
-    public static void spin_and_move_vertical(Context context, View view, int visible) {
-        Animation bottomUp = AnimationUtils.loadAnimation(context,
-                R.anim.translate_rotate_anim);
-        view.startAnimation(bottomUp);
-        view.setVisibility(visible);
+
+    public static void spin_animation(View view, int duration, int repeat_count) {
+        AnimationSet animationSet = new AnimationSet(true);
+        RotateAnimation rotateAnimation = new RotateAnimation(360f, 0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        rotateAnimation.setDuration(duration);
+        rotateAnimation.setRepeatMode(Animation.RESTART);
+        rotateAnimation.setRepeatCount(repeat_count);
+        animationSet.addAnimation(rotateAnimation);
+        view.startAnimation(animationSet);
     }
 
 }
