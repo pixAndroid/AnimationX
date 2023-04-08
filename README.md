@@ -26,7 +26,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
 #### Step 2. Add the dependency
 
 ```bash
-	implementation 'com.github.pixAndroid:AnimationX:2.5'
+	implementation 'com.github.pixAndroid:AnimationX:2.7'
 ```
 ## Examples
 ### 01 - Smooth ProgressBar Animation
@@ -59,6 +59,18 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
      AnimationX.fade_in(view, 2000);
      AnimationX.fade_out(view, 2000);
 ```
+
+### 06 - Spin Animation
+```bash
+     AnimationX.spin_animation(view, duration, repeat_count);
+```
+
+### 07 - Alpha Animation
+```bash
+     AnimationX.alphaAnimation(view, from_alpha, to_alpha,  duration, listener);
+```
+
+
 
 ## Badges
 
