@@ -265,4 +265,9 @@ public class AnimationX {
         view.startAnimation(animationSet);
     }
 
+    public static void shake_view(Context mContext, View view){
+        Animation shake = AnimationUtils.loadAnimation(mContext, R.anim.shake);
+        view.startAnimation(shake);
+    }
+
 }
