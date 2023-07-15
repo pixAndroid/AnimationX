@@ -24,10 +24,13 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 /********************************************
+ * https://github.com/pixAndroid/AnimationX
  *     Created by DailyCoding on 24-Feb-23.  *
  ********************************************/
 
+
 public class AnimationX {
+
 
     public static void click_effect_shake_left(Context context, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(context, R.anim.shake_left));
@@ -375,9 +378,6 @@ public class AnimationX {
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
                 textview.setText(valueAnimator.getAnimatedValue().toString());
             }
-
-
-
         });
 
         valueAnimator.addListener(new AnimatorListenerAdapter() {
