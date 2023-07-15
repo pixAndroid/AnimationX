@@ -5,6 +5,7 @@
 
 Mainly focused on regular animations, such as - Aplha, Translate, Scale, etc.
 
+![cover_bl – 12](https://github.com/pixAndroid/AnimationX/assets/36542546/406edf6d-7ded-42e0-adf3-9a65d4b99223)
 
 
 ### Project Requirements
