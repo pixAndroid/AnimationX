@@ -48,7 +48,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
 
 ### 02 - Digit Animation
 ```bash
-     AnimationX.digitCounter(0, 100, txt_number);
+     AnimationX.digitCounter(0, 100, text_view);
 ```
 
 ### 03 - Color Chnage Animation
