@@ -70,6 +70,10 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
      AnimationX.alphaAnimation(view, from_alpha, to_alpha,  duration, listener);
 ```
 
+### 08 - Shake Animation
+```bash
+     AnimationX.shake_animation(view, from_alpha, to_alpha,  duration, listener);
+```
 
 
 ## Badges
