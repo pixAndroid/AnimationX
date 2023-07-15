@@ -492,7 +492,7 @@ public class AnimationX {
         a.setDuration(duration);
 
         RotateAnimation r = new RotateAnimation(360f, 0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
-//        r.setStartOffset(1000);
+        // r.setStartOffset(1000);
         r.setDuration(1400);
 
         animationSet.addAnimation(r);
