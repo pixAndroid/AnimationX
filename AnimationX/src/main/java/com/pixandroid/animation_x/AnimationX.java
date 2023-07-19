@@ -446,16 +446,17 @@ public class AnimationX {
     }
 
     public static void spin_and_move_vertical(View view, int fromY, int toY, int duration, AnimationXListener listener) {
-        AnimationSet animationSet = new AnimationSet(true);
 
+
+        AnimationSet animationSet = new AnimationSet(true);
         TranslateAnimation a = new TranslateAnimation(
                0, 0,
                fromY,toY);
-        a.setDuration(duration);
+        a.setDuration((long) (duration/1.5));
 
         RotateAnimation r = new RotateAnimation(360f, 0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 //        r.setStartOffset(1000);
-        r.setDuration(1400);
+        r.setDuration(duration);
 
         animationSet.addAnimation(r);
         animationSet.addAnimation(a);
