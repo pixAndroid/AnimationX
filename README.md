@@ -5,7 +5,13 @@
 
 Mainly focused on regular animations, such as - Aplha, Translate, Scale, etc.
 
-![cover_bl – 12](https://github.com/pixAndroid/AnimationX/assets/36542546/406edf6d-7ded-42e0-adf3-9a65d4b99223)
+![cover_bl – 12](https://github.com/pixAndroid/AnimationX/assets/36542546/7fd586c7-2640-4aba-8912-3a1641236e6c)
+
+###DeMo
+
+
+https://github.com/pixAndroid/AnimationX/assets/36542546/634e7abc-19b3-4795-8932-8f65ee3f895b
+
 
 
 ### Project Requirements
@@ -42,7 +48,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
 
 ### 02 - Digit Animation
 ```bash
-     AnimationX.digitCounter(0, 100, txt_number);
+     AnimationX.digitCounter(0, 100, text_view);
 ```
 
 ### 03 - Color Chnage Animation
