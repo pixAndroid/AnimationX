@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         RadioGroup radio_group = findViewById(R.id.radio_group);
 
-        Button btn_apply = findViewById(R.id.btn_apply);
+        TextView btn_apply = findViewById(R.id.btn_apply);
         progress_bar = findViewById(R.id.progress_bar);
         img = findViewById(R.id.img);
         TextView txt_number = findViewById(R.id.txt_number);
@@ -45,20 +46,27 @@ public class MainActivity extends AppCompatActivity {
                         AnimationX.text_color_change_effect(MainActivity.this, txt_number, 0, Color.RED, 500, null);
                     }
                 }, 500);
-                AnimationX.spin_animation(img, 50, 100, null);
+                //AnimationX.spin_animation(img, 50, 100, null);
 
                 switch (radio_group.getCheckedRadioButtonId()) {
                     case R.id.rb_click_effect_shake_left:
                         AnimationX.click_effect_shake_right(MainActivity.this, view);
                         break;
                     case R.id.rb_click_effect_scale_up:
-                        AnimationX.click_effect_scale_up(MainActivity.this, view);
+                        AnimationX.tap_anim_fade(btn_apply, 500, new AnimationX.AnimationXListener() {
+                            @Override
+                            public void onAnimationCompleted() {
+                                Toast.makeText(MainActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+
                         break;
                     case R.id.rb_color_change_effect:
-                        AnimationX.view_color_change_effect(MainActivity.this, view, Color.RED, Color.GREEN, 1000, null);
+                        AnimationX.view_color_change_effect(MainActivity.this, view, 0, Color.GREEN, 1000, null);
                         break;
                     case R.id.rb_fade_out:
-                        AnimationX.fade_in(view, 2000, null);
+                        AnimationX.fade_in(view, 500, null);
                         break;
 
 
@@ -68,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        int yourMaxValue = 120000;
+        int yourMaxValue = 30000;
         progress_bar.setMax(yourMaxValue * 100);
 
 

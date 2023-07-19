@@ -8,7 +8,11 @@ import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -32,6 +36,32 @@ import androidx.recyclerview.widget.RecyclerView;
 public class AnimationX {
 
 
+    public static void tap_anim_fade(View view, int duration, AnimationXListener listener) {
+        AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
+        alphaAnimation.setDuration(duration);
+        alphaAnimation.setRepeatCount(0);
+        alphaAnimation.setRepeatMode(Animation.RESTART);
+        view.startAnimation(alphaAnimation);
+        alphaAnimation.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                view.setVisibility(View.VISIBLE);
+                if (listener != null)
+                    listener.onAnimationCompleted();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+    }
+
     public static void click_effect_shake_left(Context context, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(context, R.anim.shake_left));
     }
@@ -46,6 +76,10 @@ public class AnimationX {
 
     public static void view_color_change_effect(Context context, View view, int colorFrom,
                                                 int colorTo, int duration, AnimationXListener listener) {
+
+        if (colorFrom == 0) {
+            colorFrom = getBackgroundColor(view);
+        }
 
         ValueAnimator colorAnimation = ValueAnimator.ofObject(new ArgbEvaluator(), colorFrom, colorTo);
         colorAnimation.setDuration(duration); // milliseconds
@@ -74,6 +108,15 @@ public class AnimationX {
         });
 
         colorAnimation.start();
+    }
+
+    public static int getBackgroundColor(View view) {
+        int color = Color.TRANSPARENT;
+        Drawable background = view.getBackground();
+        if (background instanceof ColorDrawable)
+            color = ((ColorDrawable) background).getColor();
+
+        return color;
     }
 
     public static void text_color_change_effect(Context context,
@@ -115,6 +158,8 @@ public class AnimationX {
 
         colorAnimation.start();
     }
+
+
 
     public static void pulse_effect(Context context, View view, AnimationXListener listener) {
         ObjectAnimator scaleDown = ObjectAnimator.ofPropertyValuesHolder(
@@ -518,6 +563,14 @@ public class AnimationX {
         });
 
         view.startAnimation(animationSet);
+    }
+
+    public static void bottomToTop(View view, int duration, int fromY, int toY) {
+        TranslateAnimation animate = new TranslateAnimation(0,0,fromY,toY);
+        animate.setDuration(duration);
+        animate.setFillAfter(true);
+        view.startAnimation(animate);
+        view.setVisibility(View.VISIBLE);
     }
 
 
