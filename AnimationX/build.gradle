@@ -7,11 +7,11 @@ plugins {
 
 android {
     namespace 'com.pixandroid.animation_x'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 31
         versionName "3.1"
 
@@ -57,7 +57,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.pixandroid.animation_x'
             artifactId = 'animationx'
-            version = '3.0'
+            version = '3.5'
 
             afterEvaluate {
                 from components.release

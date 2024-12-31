@@ -574,5 +574,35 @@ public class AnimationX {
         view.setVisibility(View.VISIBLE);
     }
 
+    public static void startBounceAnimationTwice(Context context, View targetView,  Animation.AnimationListener listener) {
+        // Load the animation
+        Animation scaleAnimation = AnimationUtils.loadAnimation(context, R.anim.bounce_twice_animation);
 
+        // Set repeat count to make the animation run twice
+        scaleAnimation.setRepeatCount(3); // (1 cycle + reverse) * 2 = 2 full cycles
+
+        // Attach the listener if provided
+        if (listener != null) {
+            scaleAnimation.setAnimationListener(listener);
+        }
+
+        // Start the animation
+        targetView.startAnimation(scaleAnimation);
+    }
+
+    public static void startVerticalBounceAnimation(Context context, View targetView, int animationResourceId, int repeatCount, Animation.AnimationListener listener) {
+        // Load the animation
+        Animation verticalAnimation = AnimationUtils.loadAnimation(context, animationResourceId);
+
+        // Set repeat count dynamically
+        verticalAnimation.setRepeatCount(repeatCount);
+
+        // Attach the listener if provided
+        if (listener != null) {
+            verticalAnimation.setAnimationListener(listener);
+        }
+
+        // Start the animation
+        targetView.startAnimation(verticalAnimation);
+    }
 }
