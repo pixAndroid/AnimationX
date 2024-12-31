@@ -33,7 +33,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.4-bin.zip
 #### Step 2. Add the dependency
 
 ```bash
-	implementation 'com.github.pixAndroid:AnimationX:3.5'
+	implementation 'com.github.pixAndroid:AnimationX:3.6'
 ```
 ## Examples
 ### 01 - Smooth ProgressBar Animation
