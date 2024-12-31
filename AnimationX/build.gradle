@@ -12,8 +12,8 @@ android {
     defaultConfig {
         minSdk 26
         targetSdk 34
-        versionCode 39
-        versionName "3.9"
+        versionCode 40
+        versionName "4.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -45,8 +45,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 
@@ -57,7 +57,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.pixandroid.animation_x'
             artifactId = 'animationx'
-            version = '3.9'
+            version = '4.0'
 
             afterEvaluate {
                 from components.release
