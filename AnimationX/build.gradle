@@ -10,10 +10,10 @@ android {
     compileSdk 34
 
     defaultConfig {
-        minSdk 21
+        minSdk 26
         targetSdk 34
-        versionCode 31
-        versionName "3.1"
+        versionCode 37
+        versionName "3.7"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -57,7 +57,7 @@ publishing {
         release(MavenPublication) {
             groupId = 'com.pixandroid.animation_x'
             artifactId = 'animationx'
-            version = '3.6'
+            version = '3.7'
 
             afterEvaluate {
                 from components.release
