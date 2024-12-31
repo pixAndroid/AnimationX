@@ -2,9 +2,9 @@
 <scale xmlns:android="http://schemas.android.com/apk/res/android"
     android:duration="150"
     android:fromXScale="1.0"
-    android:toXScale="1.2"
+    android:toXScale="1.01"
     android:fromYScale="1.0"
-    android:toYScale="1.2"
+    android:toYScale="1.01"
     android:pivotX="50%"
     android:pivotY="50%"
     android:repeatMode="reverse" />
