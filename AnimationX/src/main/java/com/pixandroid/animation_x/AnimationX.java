@@ -20,6 +20,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LayoutAnimationController;
 import android.view.animation.RotateAnimation;
+import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -604,5 +605,37 @@ public class AnimationX {
 
         // Start the animation
         targetView.startAnimation(verticalAnimation);
+    }
+
+    public static void startBounceAnimation(
+            View targetView,
+            float toXScale,
+            float toYScale,
+            int duration,
+            int repeat_count,
+            Animation.AnimationListener listener) {
+
+        // Create a ScaleAnimation programmatically
+        ScaleAnimation scaleAnimation = new ScaleAnimation(
+                1.0f, toXScale, // From XScale to XScale
+                1.0f, toYScale, // From YScale to YScale
+                Animation.RELATIVE_TO_SELF, 0.5f, // PivotX at 50% of the view's width
+                Animation.RELATIVE_TO_SELF, 0.5f  // PivotY at 50% of the view's height
+        );
+
+        // Set animation duration
+        scaleAnimation.setDuration(duration);
+
+        // Set repeat count and mode to reverse for smooth bouncing
+        scaleAnimation.setRepeatCount(repeat_count); // (1 cycle + reverse) * 2 = 2 full cycles
+        scaleAnimation.setRepeatMode(Animation.REVERSE);
+
+        // Attach the listener if provided
+        if (listener != null) {
+            scaleAnimation.setAnimationListener(listener);
+        }
+
+        // Start the animation
+        targetView.startAnimation(scaleAnimation);
     }
 }
