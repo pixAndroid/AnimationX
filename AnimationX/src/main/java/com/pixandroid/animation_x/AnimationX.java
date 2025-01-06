@@ -71,6 +71,30 @@ public class AnimationX {
         view.startAnimation(AnimationUtils.loadAnimation(context, R.anim.shake_right));
     }
 
+    public static void click_effect_shake_left(Context context, View view, Animation.AnimationListener listener) {
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.shake_left);
+
+        // Attach the listener if provided
+        if (listener != null) {
+            animation.setAnimationListener(listener);
+        }
+
+        // Start the animation
+        view.startAnimation(animation);
+    }
+
+    public static void click_effect_shake_right(Context context, View view, Animation.AnimationListener listener) {
+        Animation animation = AnimationUtils.loadAnimation(context, R.anim.shake_right);
+
+        // Attach the listener if provided
+        if (listener != null) {
+            animation.setAnimationListener(listener);
+        }
+
+        // Start the animation
+        view.startAnimation(animation);
+    }
+
     public static void click_effect_scale_up(Context context, View view) {
         view.startAnimation(AnimationUtils.loadAnimation(context, R.anim.click_scale));
     }
