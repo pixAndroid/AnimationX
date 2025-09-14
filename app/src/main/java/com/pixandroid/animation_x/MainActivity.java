@@ -39,26 +39,46 @@ public class MainActivity extends AppCompatActivity {
         btn_apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Original digit counter animation
                 AnimationX.digitCounter(0, 486, txt_number, null);
 
+                // Enhanced bounce animation with new features
                 AnimationX.startBounceAnimationTwice(MainActivity.this,
                         btn_apply, new Animation.AnimationListener() {
                             @Override
-                            public void onAnimationStart(Animation animation) {
-
-                            }
+                            public void onAnimationStart(Animation animation) {}
 
                             @Override
                             public void onAnimationEnd(Animation animation) {
-
+                                // Demo new 3D rotation after bounce
+                                AnimationX.rotateY(btn_apply, 0f, 360f, 1000, 
+                                                  AnimationX.InterpolatorType.BOUNCE, 
+                                                  new AnimationX.AnimationXListener() {
+                                    @Override
+                                    public void onAnimationCompleted() {
+                                        // Demo elastic scale after rotation
+                                        AnimationX.elasticScale(btn_apply, 1.2f, 500, null);
+                                    }
+                                });
                             }
 
                             @Override
-                            public void onAnimationRepeat(Animation animation) {
-
-                            }
+                            public void onAnimationRepeat(Animation animation) {}
                         });
 
+                // Demo animation chaining for the image
+                new AnimationX.AnimationChain()
+                    .addFadeIn(img, 300, AnimationX.InterpolatorType.DECELERATE)
+                    .addScaleUp(img, 400, AnimationX.InterpolatorType.BOUNCE)
+                    .addRotation(img, 360f, 500, AnimationX.InterpolatorType.OVERSHOOT)
+                    .setListener(new AnimationX.AnimationXListener() {
+                        @Override
+                        public void onAnimationCompleted() {
+                            // Demo wave effect after chain completes
+                            AnimationX.waveAnimation(img, 1500, 30f, null);
+                        }
+                    })
+                    .start();
             }
         });
 
