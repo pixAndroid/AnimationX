@@ -395,7 +395,9 @@ public class AnimationX {
         final LayoutAnimationController controller =
                 AnimationUtils.loadLayoutAnimation(context, R.anim.slide_in_left_layout);
         recyclerView.setLayoutAnimation(controller);
-        recyclerView.getAdapter().notifyDataSetChanged();
+        if (recyclerView.getAdapter() != null) {
+            recyclerView.getAdapter().notifyDataSetChanged();
+        }
         recyclerView.scheduleLayoutAnimation();
     }
 
@@ -404,7 +406,9 @@ public class AnimationX {
         final LayoutAnimationController controller =
                 AnimationUtils.loadLayoutAnimation(context, R.anim.slide_in_right_layout);
         recyclerView.setLayoutAnimation(controller);
-        recyclerView.getAdapter().notifyDataSetChanged();
+        if (recyclerView.getAdapter() != null) {
+            recyclerView.getAdapter().notifyDataSetChanged();
+        }
         recyclerView.scheduleLayoutAnimation();
     }
 
@@ -413,7 +417,9 @@ public class AnimationX {
         final LayoutAnimationController controller =
                 AnimationUtils.loadLayoutAnimation(context, R.anim.fade_in_layout);
         recyclerView.setLayoutAnimation(controller);
-        recyclerView.getAdapter().notifyDataSetChanged();
+        if (recyclerView.getAdapter() != null) {
+            recyclerView.getAdapter().notifyDataSetChanged();
+        }
         recyclerView.scheduleLayoutAnimation();
     }
 
